@@ -1,0 +1,51 @@
+@media all and (max-width:768px){
+	
+	.header-area .main-menu ul li{
+		float:none;
+		display: none;
+
+	}
+
+	.header-area .main-menu .my-menubar{
+		display: block;
+	}
+
+	.my-works .my-menu-hider{
+		display: block;
+	}
+	.my-works .portfolio-nav{
+		width:100%;
+		overflow: hidden;
+	}
+	.my-works .portfolio-nav ul li{
+		display: none;
+	}
+	.my-works .filtering-content{
+		width:100%;
+		overflow: hidden;
+	}
+	.my-works .portfolio .mix{
+		width:45%;
+	}
+}
+
+
+
+/*.... display 380px ....*/
+@media all and (max-width:458px){
+	.header-area .banner-text h2{
+		font-size: 27px;
+	}
+	.my-skill h2 span{
+		border:0;
+	}
+
+	.about-me h2 span{
+		border:0;
+	}
+
+	.my-works .portfolio-nav ul li{
+		float:none;
+		display: block;
+	}
+}

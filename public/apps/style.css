@@ -1,0 +1,737 @@
+/*Template Name: My personal portfolio
+	
+	Description: Personal Blog/portfolio
+	AUTHOR: Salman Rahman Auvi
+	Author URI: http://www.facebook.com/salman.auvi
+	License: GNU General Public License version 3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+	Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+	1. TYPOOGRAPHY AREA
+	2. HEADER AREA
+	
+......................................................................................*/
+
+/*... 1. TYPOOGRAPHY AREA ...*/
+
+body{
+	margin:0;
+	line-height: 1.3em;
+}
+h2{
+	color:#333333;
+	font-size: 35px;
+	text-transform: capitalize;
+	padding: 10px 0;
+	letter-spacing: 1px;
+}
+
+h2 span{
+	padding: 20px 0;
+	border-bottom: 2px solid #333333;
+}
+
+
+
+
+
+/*...HEADER AREA ...*/
+.header-area{
+	width:100%;
+	background-image:url("images/header-bg.jpg");
+	background-size:cover;
+	padding: 40px 0;
+}
+.header-area .logo-area h1 a{
+	font-size: 40px;
+	color:#FEFFFB;
+	text-transform: capitalize;
+}
+.header-area .logo-area h1 a:hover{
+	text-decoration: none;
+
+}
+.header-area ul{
+	list-style: none;
+	padding: 0;
+	margin:0;
+
+
+}
+.header-area ul li{
+	float: left;
+	padding: 34px 15px;
+}
+.header-area ul li i{
+	font-size: 25px;
+	color:#FEFFFB;
+}
+.header-area ul li i:hover{
+	color:#6A8457;
+	transition: 1s;
+	transform:rotate(360deg);
+}
+.header-area hr{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom:1px solid #FEFFFB;
+	padding: 0;
+}
+.header-area .main-menu{
+	width:100%;
+	overflow: hidden;
+}
+.header-area .main-menu ul li{
+	float:left;
+	padding: 16px 20px;
+}
+.header-area .main-menu ul li a{
+	font-size: 19px;
+	text-transform: uppercase;
+	color:#FFFEFF;
+}
+.header-area .main-menu ul li a:hover{
+	text-decoration: none;
+	border-bottom: 1px solid #FEFFFB;
+	transition: 1s;
+}
+.header-area .main-menu ul .active a{
+	color:#8AB172;
+}
+.header-area .main-menu ul .active a:hover{
+	border:0;
+}
+.header-area .main-menu .my-menubar{
+	display: none;
+	cursor: pointer;
+}
+.header-area .main-menu .my-menubar a{
+	font-size:24px;
+	color:#FEFFFB;
+	float: left;
+	padding: 0 10px;
+	text-transform: capitalize;
+}
+.header-area .main-menu .my-menubar a:hover{
+	text-decoration: none;
+
+}
+.header-area .main-menu .my-menubar i{
+	font-size:24px;
+	color:#FEFFFB;
+	float: right;
+	padding: 0 10px;
+}
+/*... scroll-menu ...*/
+.scroll-menu{
+	width:100%;
+	position: fixed;
+	top:0;
+	background-color:#FFFFFF;
+	border-bottom: 1px solid #BCBCBC;
+	box-shadow: 1px solid #BCBCBC;
+	z-index: 9999;
+	display: none;
+}
+.scroll-menu .logo h2 a{
+	font-size: 30px;
+	color:#333333 ;
+	text-transform: capitalize;
+}
+.scroll-menu .logo h2 a:hover{
+	text-decoration: none;
+}
+.scroll-menu ul{
+	padding: 20px 0;
+	text-align: center;
+}
+.scroll-menu ul li{
+	display: inline-block;
+	padding: 5px 10px;
+}
+.scroll-menu ul li a{
+	font-size:21px;
+	color:#333333 ;
+	text-transform: capitalize;
+}
+/*.my-menu-close h5{
+	font-size: 19px;
+	text-transform: capitalize;
+	color:#FFFFFF;
+	background-color:#333333;
+	cursor: pointer;
+	padding: 5px 5px;
+	border-radius: 3px;
+}*/
+/*... banner-text ...*/
+.header-area .banner-text{
+	width:100%;
+	padding: 40px 0;
+}
+.header-area .banner-text h3{
+	color:#FEFFFB;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	font-size: 20px;
+}
+.header-area .banner-text h2{
+	color:#FEEEEB;
+	font-size: 35px;
+	text-transform: capitalize;
+	padding: 10px 0;
+	letter-spacing: 1px;
+}
+.header-area .banner-text h2 span{
+	border-top: 2px solid #FEEEEB;
+	border-bottom: 2px solid #FEEEEB;
+	padding: 10px 0;
+	
+}
+.header-area .know-me {
+	padding: 10px 0;
+}
+.header-area .know-me a {
+	font-size:19px;
+	border:1px solid #FEEEEB;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	color:#FEEEEB;
+	border-radius: 2px;
+}
+.header-area .know-me a:hover{
+	text-decoration: none;
+	background-color:#FEEEEB;
+	color:#000000;
+	border:1px solid #000000;
+	transition: 1s;
+	border-radius: 2px;
+}
+.header-area .swipe-down{
+	width:100%;
+	padding: 29px 0;
+}
+.header-area .swipe-down a i{
+	font-size:40px;
+	color:#FEEEEB;
+	height:40px;
+	width:40px;
+	border:1px solid #FEEEEB;
+	border-radius: 50%;
+}
+/*...my-scroll top .... */
+.my-scroll-top{
+	position: fixed;
+	bottom: 80px;
+	right: 53px;
+	z-index: 9999;
+	cursor: pointer;
+	display: none;
+
+}
+.my-scroll-top a i{
+	padding: 10px 10px;
+	font-size:27px;
+	background-color:#FFFFFF;
+	color:#000000;
+	border:1px solid #2D6DA4;
+	border-radius: 20%;
+	font-weight: bold;
+}
+.my-scroll-top:hover a i{
+	background-color:#000000;
+	color:#FFFFFF;
+	border:1px solid #FFFFFF;
+}
+/*... ABOUT ME ....*/
+
+.about-me{
+	width:100%;
+	background-color:#FEFEFE;
+	padding: 30px 0;
+}
+.about-me h3{
+	font-size:19px;
+	text-transform: capitalize;
+	padding: 10px 0;
+	font-weight: normal;
+}
+.about-me .about-text{
+	padding: 30px 0;
+}
+.about-me .about-left .my-picture{
+	max-height: 200px;
+	max-width:200px;
+	border-radius: 50%;
+	border:5px solid #FFFFFF;
+}
+.about-me .about-left .my-picture img{
+	max-height: 198px;
+	max-width:198px;
+	border-radius: 50%;
+}
+
+.about-left  .personal-text h3{
+	font-size: 22px;
+	letter-spacing: 1px;
+	color:#333333;
+	text-transform: capitalize;
+}
+.about-left .personal-text h3 span{
+	border-bottom: 2px solid #333333;
+	padding: 10px 0;
+}
+.about-left h4{
+	font-size:20px;
+	text-transform: capitalize;
+	font-weight: bold
+}
+.about-left h5{
+	font-size:13px;
+	text-transform: lowercase;
+
+}
+
+.about-right .about-right-text{
+	padding: 20px 0;
+}
+.about-right h3{
+	font-size: 22px;
+	letter-spacing: 1px;
+	color:#333333;
+	text-transform: capitalize;
+}
+
+.about-right h3 span{
+	border-bottom: 2px solid #333333;
+	padding: 10px 0;
+}
+.about-right h4{
+	font-size:13px;
+	text-transform: capitalize;
+}
+.about-right p{
+	font-size:15px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+.about-right .fixed-answer a{
+	text-decoration: none;
+	color:#2980b9;
+}
+.about-right .fixed-answer h3{
+	border:none;
+}
+.fixed-answer .ui-accordion .ui-accordion-header{
+	padding: 20px 30px;
+}
+
+/*... MY SERVICES ...*/
+.my-services{
+	width:100%;
+	background: url("images/service-bg.jpg")50% 80% no-repeat fixed #333;
+	position: relative;
+}
+.image-noise{
+	width:100%;
+	background-image: url("images/noise.png");
+	padding: 40px 0;
+	z-index: 0;
+}
+.my-services  h2{
+	font-size: 40px;
+	color:#FFFFFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 20px 0;
+}
+.my-services .service-offer h3{
+	font-size: 35px;
+	color:#FFFFFF;
+	text-transform: capitalize;
+}
+.my-services .service-offer  i{
+	font-size: 35px;
+	color:#FFFFFF;
+}
+.my-services .service-offer  i{
+	padding: 5px 10px;
+}
+.my-services .service-offer h4{
+	font-size: 17px;
+	color:#FFFFFF;
+	text-transform: capitalize;
+}
+.my-services .service-offer p{
+	font-size: 15px;
+	color:#FFFFFF;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+}
+
+/*... MY WORKS ...*/
+.my-works{
+	width:100%;
+}
+.portfolio-nav{
+	width:100%;
+	overflow: hidden;
+}
+.my-menu-hider{
+	width:100%;
+	display: none;
+	cursor: pointer;
+	margin:20px 0;
+	background-color:#333333;
+	overflow: hidden;
+}
+.my-menu-hider a{
+	font-size: 27px;
+	color:#FFFFFF;
+	display: block;
+	padding: 0 30px;
+}
+.my-menu-hider a:hover{
+	text-decoration: none;
+}
+.my-menu-hider a i{
+	font-size: 27px;
+	color:#FFFFFF;
+	background-color:#333333;
+	float:right;
+	border-radius: 5px;
+}
+.my-works ul{
+	list-style: none;
+	width:100%;
+}
+.my-works ul li{
+	float:left;
+	padding: 25px 20px;
+}
+.my-works ul li a{
+	border: 1px solid #BECEEF;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #323232;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+	border-radius: 3px;
+}
+.my-works ul li a:hover{
+	text-decoration: none;
+	background-color:#BECEEF;
+	transition: 1s;
+}
+
+/*... mixit up setting ...*/
+.my-works .filtering-content{
+	width:100%;
+	overflow: hidden;
+}
+.portfolio .mix{
+	width:30%;
+	display: none;
+	overflow: hidden;
+	padding: 10px 20px;
+	position: relative;
+}
+
+
+/*... MY SKILLS ...*/
+.my-skill{
+	width:100%;
+	background:url("images/skill-bg.jpg")50% 80% no-repeat fixed #333;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+.my-skill h2{
+	font-size: 40px;
+	color:#EAEAEA;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 20px 0;
+}
+.my-skill h2 span{
+	border-bottom: 2px solid #EAEAEA;
+	padding: 10px 0;
+}
+
+.my-skill h3{
+	font-size:22px;
+	color:#EAEAEA;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+.skill-list{
+	width:100%;
+	padding: 60px 0;
+}
+.skill-area .ui-widget.ui-widget-content{
+	padding: 10px 0;
+}
+.html-css .progress-bar{
+	color:#EAEAEA;
+	width:95%;
+	font-size: 18px;
+
+}
+.java-script .progress-bar{
+	color:#EAEAEA;
+	width:75%;
+	font-size: 18px;
+}
+.my-jquery h3{
+	text-transform: normal;
+}
+.my-jquery .progress-bar{
+	width:80%;
+	font-size: 18px;
+}
+.my-php .progress-bar{
+	width:30%;
+	font-size: 18px;
+}
+.c-language .progress-bar{
+	width:80%;
+	font-size: 18px;
+}
+.my-java .progress-bar{
+	width:60%;
+	font-size: 18px;
+}
+.itsMySqul .progress-bar{
+	width:60%;
+	font-size: 18px;
+}
+
+/*... WHY HIRE ME ..*/
+.why-hire-me{
+	width:100%;
+	background-color:#F9F9F9;
+	padding: 50px 0;
+}
+.why-hire-me h2{
+	font-size: 26px;
+	color:#333333;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 20px 0;
+}
+.why-hire-me h3{
+	text-transform: capitalize;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.why-hire-me .descrive-area{
+	margin:50px 0;
+}
+.why-hire-me .descrive-area i{
+	padding: 5px 10px;
+	font-size: 23px;
+	color:#FF7E60;
+}
+.why-hire-me .descrive-area h4{
+	font-size:19px;
+	color:#333333;
+	text-transform: capitalize;
+}
+.why-hire-me .descrive-area p{
+	font-size:14px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+/*... ADVICE AREA...*/
+.advice-area{
+	width:100%;
+	background:url("images/advice.png") no-repeat fixed #333;
+	background-size: cover;
+	position: relative;
+}
+.advice-area h2{
+	font-size: 25px;
+	color:#EAEAEA;
+	text-transform: capitalize;
+	margin:20px 0;
+}
+.advice-area h3{
+	font-size: 20px;
+	color:#EAEAEA;
+	text-transform: capitalize;
+}
+.advice-area h4{
+	font-size: 19px;
+	color:#EAEAEA;
+	text-transform: capitalize;
+}
+.advice-area h5{
+	font-size: 15px;
+	color:#EAEAEA;
+	text-transform: capitalize;
+}
+
+
+
+/*... CONTACT ME ...*/
+.contact-me{
+	width:100%;
+	background-color:#FFFFFF;
+	padding: 50px 0;
+	overflow: hidden;
+}
+.contact-me h3{
+	font-size:17px;
+	color:#999999;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	padding: 20px 0;
+}
+.contact-me .email-template{
+	width:60%;
+	margin:auto;
+	overflow: hidden;
+	padding: 50px 0
+}
+.email-template input[type="text"],
+.email-template input[type="email"]{
+	width:80%;
+	padding: 15px 10px;
+	display: block;
+	border: 1px solid #B9B9B9;
+	margin:30px 0;
+	color:#555555;
+}
+.email-template textarea{
+	width:80%;
+	padding: 50px 10px;
+	display: block;
+	border: 1px solid #B9B9B9;
+	margin:30px 0;
+	color:#555555;
+
+}
+.email-template input[type="text"]:focus,
+.email-template input[type="email"]:focus{
+	background-color:#F5F5F5;
+	transition: 1s;
+}
+
+.email-template .submit-area{
+	overflow: hidden;
+	padding: 15px 0;
+}
+.email-template input[type="submit"]{
+	width:80%;
+	padding: 10px 20px;
+	font-size: 17px;
+	border:1px solid #B9B9B9;
+	border-radius: 3px;
+	color:#555555;
+	box-sizing: border-box;
+	box-shadow: 2px;
+	background-color:#FFFFFF;
+}
+.email-template input[type="submit"]:hover{
+	background-color:#2A2A2A;
+	transition: 1s;
+	color:#FFFFFF;
+}
+
+/*... quick contact ...*/
+.quick-contact{
+	width:100%;
+	overflow: hidden;
+	margin:50px 0;
+}
+.quick-contact i{
+	font-size: 27px;
+	color:#181818;
+}
+.quick-contact h4{
+	font-size: 22px;
+	color:#181818;
+	text-transform: uppercase;
+}
+.quick-contact h5{
+	font-size: 14px;
+	text-transform: lowercase;
+	color:#555555;
+}
+
+fieldset {
+    
+    border: 2px solid #1d2e3c;
+}
+
+/*... FOOTER AREA ...*/
+.footer-area{
+	width:100%;
+	background-color:#181818;
+	padding: 50px 0;
+}
+.footer-area h2{
+	font-size: 25px;
+	color:#333333;
+	text-transform: capitalize;
+}
+.footer-area h2 span{
+	background-color:#FFFFFF;
+	padding: 10px 10px;
+	border-radius: 2px;
+	margin:15px 0;
+}
+.footer-area .social-icons{
+	padding: 20px 0;
+}
+
+.footer-area .social-icons a i{
+	font-size: 27px;
+	color:#FFFFFF;
+	padding: 10px 10px;
+	background-color:#4C4C4C;
+}
+.footer-area .social-icons .facebook:hover i {
+	background-color:#3B5998;
+	color:#FFFFFF;
+	transition: 1s;
+}
+.footer-area .social-icons .twitter:hover i {
+	background-color:#55ACEE;
+	color:#FFFFFF;
+	transition: 1s;
+}
+.footer-area .social-icons .google-plus:hover i {
+	background-color:#DC4E41;
+	color:#FFFFFF;
+	transition: 1s;
+}
+.footer-area .social-icons .linkedin:hover i {
+	background-color:#0077B5;
+	color:#FFFFFF;
+	transition: 1s;
+}
+
+
+.footer-area .bottom-footer{
+	padding: 20px 0;
+
+}
+.footer-area hr{
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px 0;
+}
+.footer-area h6{
+	text-transform: capitalize;
+	font-size: 13px;
+	color:#777777;
+	letter-spacing: 1px;
+}
+
+
