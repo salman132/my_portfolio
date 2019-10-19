@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,9 @@ class SettingsController extends Controller
     {
         $settings = Settings::all();
 
-        return view("admin.settings")->with('settings',$settings);
+        return view("admin.settings")
+            ->with('settings',$settings)
+            ->with('categories',Category::all());
     }
 
     /**
@@ -34,9 +37,18 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'category'=>'required|max:60'
+        ]);
+        $category = new Category();
+        $category->user_id = Auth::id();
+        $category->name = $request->category;
+        $category->save();
+
+        Session::flash('success','You created a category');
+        return redirect()->back();
     }
 
     /**
@@ -137,6 +149,8 @@ class SettingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        Session::flash('success','You deleted a Category');
+        return redirect()->back();
     }
 }

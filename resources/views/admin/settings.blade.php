@@ -75,4 +75,60 @@
 
     @endif
 
+    <div class="py-5">
+       <div class="card">
+           <div class="card-header">
+               <div class="card-title">
+                   Add Category
+               </div>
+           </div>
+           <div class="card-body">
+               <form action="{{route('category.store')}}" method="post">
+                   {{csrf_field()}}
+                   <div class="form-group">
+                       <label>Category Name</label>
+                       <input type="text" name="category"  class="form-control" placeholder="Category Name">
+                   </div>
+                   <div class="form-group">
+                       <input type="submit" value="Add" class="btn btn-primary">
+                   </div>
+               </form>
+           </div>
+       </div>
+    </div>
+
+    <div class="py-3">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    Categories List
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    @if($categories->count()==0)
+
+                        <tr class="text-danger text-center">
+                            <td>No Categories Found Yet</td>
+                        </tr>
+                        @else
+
+                        @foreach($categories as $category)
+
+                            <tr>
+                                <td>{{$category->name}}</td>
+                                <td><a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-danger">Delete</a></td>
+                            </tr>
+                            @endforeach
+
+                        @endif
+                </table>
+            </div>
+        </div>
+    </div>
+
     @endsection

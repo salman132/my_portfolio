@@ -14,6 +14,12 @@ class AboutsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         return view('admin.abouts.about')->with('about',About::where('user_id',Auth::id())->first());

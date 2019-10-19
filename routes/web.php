@@ -53,6 +53,14 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'uses'=>'UsersController@destroy',
         'as'=>'skill.delete'
     ]);
+    Route::post('category/store',[
+        'uses'=>'SettingsController@create',
+        'as'=> 'category.store'
+    ]);
+    Route::get('category/delete/{id}',[
+        'uses'=> 'SettingsController@destroy',
+        'as'=> 'category.delete'
+    ]);
     Route::get('faq',[
         'uses'=>'FaqsController@index',
         'as'=>'faq'
