@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Contact;
+use App\Mail\ContactsMailer;
 use App\Service;
 use App\Skill;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+
 
 class FrontEndController extends Controller
 {
@@ -51,20 +52,21 @@ class FrontEndController extends Controller
             'sms'=> 'required'
         ]);
 
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->text = $request->sms;
+
+        $contact->save();
 
 
-        if($validate == TRUE) {
-            $contact = new Contact();
-            $contact->name = $request->name;
-            $contact->email = $request->email;
-            $contact->text = $request->sms;
-            $contact->save();
+        $user = User::all()->first();
 
-            return ['success' => true, 'message' => 'Thank You.We got your Message'];
-        }
-        else{
-            return ['error'=>true,'Please Fill Up the Form Accordingly'];
-        }
+        Mail::to($user->email)->send(new \App\Mail\ContactsMailer($contact));
+
+        return redirect()->back();
+
+
 
     }
 

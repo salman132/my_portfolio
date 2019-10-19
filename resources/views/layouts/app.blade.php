@@ -9,6 +9,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- FAVICON -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset($setting->logo)}}">
+
 
 
     <!-- Fonts -->
@@ -29,9 +33,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    @foreach($settings as $setting)
+
                     <img src="{{asset($setting->logo)}}" alt="{{$setting->logo}}" height="120px" width="120px">
-                    @endforeach
+
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -91,6 +95,7 @@
                             <li class="list-group-item"><a href="{{route('about')}}">About</a></li>
                             <li class="list-group-item"><a href="{{route('faq')}}">Faq</a></li>
                             <li class="list-group-item"><a href="{{route('skills')}}">Skills</a></li>
+                            <li class="list-group-item"><a href="{{route('projects')}}">Add Projects</a></li>
                             <li class="list-group-item"><a href="{{route('settings')}}">Settings</a></li>
                             <li class="list-group-item"><a href="{{route('services')}}">Services</a></li>
                             <li class="list-group-item"><a href="{{route('mail')}}">Mails</a></li>
@@ -126,6 +131,7 @@
 
         $(document).ready(function() {
             $('#summernote').summernote();
+            $('.summernote').summernote();
         });
     </script>
 </body>

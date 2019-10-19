@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ... FAVICON... -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{$user->settings->logo}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset($user->settings->logo)}}">
 
     <!-- ... STYLE SHEETS... -->
     <link rel="stylesheet" href="{{ asset('apps/css/font-awesome.min.css') }}">

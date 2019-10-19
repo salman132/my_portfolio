@@ -238,12 +238,9 @@
         <div class="container">
             <h2 class="text-center">con<span>tact m</span>e</h2>
             <h3 class="text-center">feel free to write whatever you want</h3>
-            <form method="post" id="con">
+            <form action="{{route('contact.store')}}" method="post" id="con">
                 <div class="email-template">
-
-
-
-
+                    {{csrf_field()}}
                     <input type="text" name="name" id="name" placeholder="Enter your Name" required="required">
                     <input type="email" name="email" id="email" placeholder="Please enter your valid email address" required="required">
 
@@ -294,45 +291,3 @@
 
 @endsection
 
-@section("js")
-
-
-    <script>
-        $(document).ready(function () {
-            $.ajaxSetup({
-                headers: {'X-CSRF-Token' : '{{csrf_token()}}' }
-            });
-
-            $("#con").on('submit',function (event) {
-
-                event.preventDefault();
-                var form_data = $(this).serialize();
-
-                $.ajax({
-                    url:"{{route('contact.store')}}",
-                    method:'POST',
-                    data:form_data,
-
-                    success:function (response) {
-                       if(response.success){
-                           $("#con")[0].reset();
-                           $("#msg").append(response.message);
-                       
-                       }
-                       else{
-                           $("#danger").append("Please Fill the form Accordingly");
-                       }
-                    },
-                    error:function (error) {
-                        console.log(error)
-                    }
-                });
-
-
-            });
-
-        });
-    </script>
-
-
-    @endsection

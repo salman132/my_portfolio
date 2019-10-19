@@ -114,6 +114,25 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'uses'=>'MailsController@index',
         'as'=>'mail'
     ]);
+    Route::get('mail/read/{id}',[
+        'uses'=> 'MailsController@read',
+        'as'=> 'mail.read'
+    ]);
+    Route::get('mail/delete/{id}',[
+        'uses'=> 'MailsController@destroy',
+        'as'=> 'mail.delete'
+    ]);
+    Route::post('mail/reply',[
+        'uses'=> 'MailsController@store',
+        'as'=>'mail.reply'
+    ]);
+
+
+
+    Route::get('add/projects',[
+        'uses'=>'ProjectsController@index',
+        'as'=>'projects'
+    ]);
 
 
 });
