@@ -10,6 +10,7 @@ use App\Skill;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 
 class FrontEndController extends Controller
@@ -63,6 +64,8 @@ class FrontEndController extends Controller
         $user = User::all()->first();
 
         Mail::to($user->email)->send(new \App\Mail\ContactsMailer($contact));
+
+        Session::flash('success','You have sent email');
 
         return redirect()->back();
 

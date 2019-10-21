@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
+use App\Project;
 use App\Skill;
 use Auth;
 use Illuminate\Http\Request;
@@ -24,7 +26,9 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard')
+            ->with('mails',Contact::where('read',0))
+            ->with('projects',Project::all());
     }
 
     /**
@@ -70,6 +74,11 @@ class UsersController extends Controller
     {
         //
     }
+
+
+
+
+
 
     /**
      * Show the form for editing the specified resource.

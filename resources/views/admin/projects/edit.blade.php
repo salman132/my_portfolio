@@ -2,8 +2,13 @@
 
 
 @section('content')
+    @if($project == NULL)
+            <div class="text-danger">
+                <h5>No Records Found</h5>
+            </div>
+        @else
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{route('project.update',['id'=>$project->id])}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
             <label>Title:</label><br>
@@ -28,11 +33,11 @@
         </div>
         <div class="form-group">
             <label>Technologies</label><br>
-            <input type="text" name="technology" placeholder="Ex: Laravel,PHP,JavaScript" class="form-control" value="{{$project->text}}">
+            <input type="text" name="technology" placeholder="Ex: Laravel,PHP,JavaScript" class="form-control" value="{{$project->technology}}">
         </div>
         <div class="form-group">
             <label>About Project</label><br>
-            <textarea name="description" class="form-control summernote" cols="30" rows="10" placeholder="About..">{{$project->description}}</textarea>
+            <textarea name="description" class="form-control summernote" cols="30" rows="10" placeholder="About..">{!! $project->description !!}</textarea>
         </div>
         <div class="form-group">
             <label>Project Image:</label><br>
@@ -43,6 +48,8 @@
             <input type="submit" value="UPDATE" class="btn btn-primary">
         </div>
     </form>
+
+    @endif
 
 
 

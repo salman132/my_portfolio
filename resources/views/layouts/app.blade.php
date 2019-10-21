@@ -91,7 +91,7 @@
                         @if(Auth::user()->is_admin)
                     <div class="col-md-4">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="">Home</a></li>
+                            <li class="list-group-item"><a href="{{route('admin')}}">Home</a></li>
                             <li class="list-group-item"><a href="{{route('about')}}">About</a></li>
                             <li class="list-group-item"><a href="{{route('faq')}}">Faq</a></li>
                             <li class="list-group-item"><a href="{{route('skills')}}">Skills</a></li>

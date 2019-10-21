@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="{{asset('apps/css/jquery-ui.structure.min.css')}}">
     <link rel="stylesheet" href="{{asset('apps/css/animate.css')}}">
 
+   <!-- .... CDN .... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
     <!-- ... MAIN CSS... -->
     <link rel="stylesheet" href="{{asset('apps/style.css')}}">
     <link rel="stylesheet" href="{{asset('apps/responsive.css')}}">
@@ -155,7 +158,34 @@
 <script src="{{ asset('apps/js/jquery.mixitup.js') }}"></script>
 <script src="{{ asset('apps/js/wow.min.js') }}"></script>
 <script src="{{ asset('apps/js/custom.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+
+<script>
+    @if(Session::has('success'))
+
+
+    toastr.success('{{Session::get('success')}} ')
+
+    @endif
+
+    $(document).ready(function() {
+        $('#summernote').summernote();
+        $('.summernote').summernote();
+    });
+</script>
+
+
 @yield('js')
+
+@if($errors)
+@foreach($errors->all() as $error)
+
+    <script>
+        toastr.error('{{$error}} ')
+    </script>
+    @endforeach
+    @endif
 
 </body>
 

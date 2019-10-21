@@ -6,7 +6,7 @@
     <section class="about-me " id="about-me">
         <div class="container">
             <div class="about-text text-center">
-                <h2>salm<span>an rahman</span> auvi</h2>
+                <h2>{{$user->name}}</h2>
                 <h3>{{$user->about->profession}}</h3>
             </div>
 
@@ -78,71 +78,38 @@
 
             <!-- ... mixit up plugin ... -->
             <div class="portfolio">
-                <div class="portfolio-nav">
-                    <!-- ... responsive menu .... -->
-                    <div class="my-menu-hider image-noise">
-
-                        <a href="#">Catagory<i class="fa fa-bars"></i></a>
-                    </div>
-
-                    <ul>
-                        <li><a href="#" class="filter" data-filter="*" >All</a></li>
-                        <li><a href="#" class="filter" data-filter=".ecommerce" > Ecommerce</a></li>
-                        <li><a href="#" class="filter" data-filter=".landing" > Landing</a></li>
-                        <li><a href="#" class="filter" data-filter=".blog" > Blog</a></li>
-                        <li><a href="#" class="filter" data-filter=".institution" >Institution</a></li>
-                    </ul>
-                </div>
-
-                <div class="filtering-content">
+                <div class="col-md-12">
                     <div class="row">
-                        <!-- ...ecommerce ... -->
-                        <div class="mix ecommerce">
-                            <a href="assets/ecommerce1/index.html"><img class="img-responsive" src="assets/ecommerce1/ecommerce1.jpg" alt="Ecommerce 1"></a>
+                        @if($projects->count()>0)
+                            @foreach($projects as $project)
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        {{$project->title}}
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="{{asset($project->image)}}" alt="{{$project->title}}" height="150px" width="150px">
+                                </div>
+                                <div class="panel-footer">
+                                    <h4>Technology Used: {{$project->technology}}</h4>
+                                    <pre>
+                                        {!! $project->description !!}
+                                    </pre>
+                                    <a href="{{$project->link}}"  target="_blank" class="btn btn-primary">Visit</a>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="mix ecommerce">
-                            <a href="assets/ecommerce2/index.html"><img class="img-responsive" src="assets/ecommerce2/ecommerce2.jpg" alt="Ecommerce 2"></a>
-                        </div>
-
-                        <div class="mix ecommerce">
-                            <a href="assets/ecommerce3/index.html"><img class="img-responsive" src="assets/ecommerce3/ecommerce3.jpg" alt="Ecommerce 3"></a>
-                        </div>
-
-                        <!-- ... landing page ... -->
-
-                        <div class="mix landing">
-                            <a href="assets/landing1/index.html"><img class="img-responsive" src="assets/landing1/landing1.jpg" alt="landing 1"></a>
-                        </div>
-
-
-
-                        <!-- ... blog page ... -->
-
-                        <div class="mix blog">
-                            <a href="assets/blog1/index.html"><img class="img-responsive" src="assets/blog1/blog1.jpg" alt="blog 1"></a>
-                        </div>
-
-                        <div class="mix blog">
-                            <a href="assets/blog2/index.html"><img class="img-responsive" src="assets/blog2/blog2.jpg" alt="blog 2"></a>
-                        </div>
-
-                        <div class="mix blog">
-                            <a href="assets/blog3/index.html"><img class="img-responsive" src="assets/blog3/blog3.jpg" alt="blog 3"></a>
-                        </div>
-
-
-                        <!-- ... institution page ... -->
-
-                        <div class="mix institution ">
-                            <a href="assets/institution1/index.html"><img class="img-responsive" src="assets/institution1/institution1.jpg" alt="institution 1"></a>
-                        </div>
-
-
-
+                                @endforeach
+                            {{$projects->links()}}
+                            @else
+                            <div class="text-danger">
+                                <h4>No Projects Found</h4>
+                            </div>
+                        @endif
                     </div>
                 </div>
-                <!-- ... filtering content.... -->
             </div>
 
 
@@ -237,6 +204,7 @@
     <section class="contact-me" id="contact">
         <div class="container">
             <h2 class="text-center">con<span>tact m</span>e</h2>
+
             <h3 class="text-center">feel free to write whatever you want</h3>
             <form action="{{route('contact.store')}}" method="post" id="con">
                 <div class="email-template">

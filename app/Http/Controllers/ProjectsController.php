@@ -113,7 +113,38 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=> 'required',
+            'category'=>'required|integer',
+            'link'=> 'required|url',
+            'technology'=> 'required',
+            'description'=>'required',
+
+        ]);
+
+        $project = Project::find($id);
+        $project->user_id = Auth::id();
+        $project->title = $request->title;
+        $project->category_id = $request->category;
+        $project->link = $request->link;
+        $project->technology = $request->technology;
+        $project->description = $request->description;
+
+        if($request->hasFile('file')){
+            if(file_exists($project->image)){
+                unlink($project->image);
+            }
+            $file = $request->file;
+            $file_new_name = time().$file->getClientOriginalName();
+            $file->move('uploads/project/',$file_new_name);
+
+            $project->image = 'uploads/project/'.$file_new_name;
+
+        }
+
+        $project->save();
+        Session::flash('success','You have Updated a Project');
+        return redirect()->back();
     }
 
     /**

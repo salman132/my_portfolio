@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'uses'=>'UsersController@index',
         'as'=>'admin'
     ]);
+
     Route::get('application/settings',[
         'uses'=>'SettingsController@index',
         'as'=> 'settings'
@@ -149,6 +150,11 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'uses'=>'ProjectsController@edit',
         'as'=>'project.edit'
     ]);
+    Route::post('project/update/{id}',[
+        'uses'=>'ProjectsController@update',
+        'as'=>'project.update'
+    ]);
+
     Route::get('project/delete/{id}',[
         'uses'=>'ProjectsController@destroy',
         'as'=>'project.delete'
