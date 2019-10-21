@@ -150,7 +150,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'as'=>'project.edit'
     ]);
     Route::get('project/delete/{id}',[
-        'uses'=>'ProjectsController@destory',
+        'uses'=>'ProjectsController@destroy',
         'as'=>'project.delete'
     ]);
 

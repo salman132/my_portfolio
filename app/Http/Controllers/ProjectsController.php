@@ -124,6 +124,10 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
+        $project = Project::find($id);
+        if(file_exists($project->image)){
+            unlink($project->image);
+        }
         Project::destroy($id);
         Session::flash('success','You deleted a project');
         return redirect()->back();
