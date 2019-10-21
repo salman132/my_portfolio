@@ -12,4 +12,5 @@ class Project extends Model
     public function category(){
         return $this->hasOne('App\Category');
     }
+
 }

@@ -12,4 +12,5 @@ class Category extends Model
     public function projects(){
         return $this->belongsToMany('App\Project');
     }
+
 }

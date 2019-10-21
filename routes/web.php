@@ -141,6 +141,18 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
         'uses'=>'ProjectsController@index',
         'as'=>'projects'
     ]);
+    Route::post('store/project',[
+        'uses'=> 'ProjectsController@store',
+        'as'=>'project.store'
+    ]);
+    Route::get('project/edit/{id}',[
+        'uses'=>'ProjectsController@edit',
+        'as'=>'project.edit'
+    ]);
+    Route::get('project/delete/{id}',[
+        'uses'=>'ProjectsController@destory',
+        'as'=>'project.delete'
+    ]);
 
 
 });
